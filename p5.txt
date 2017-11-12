@@ -75,25 +75,37 @@ Dentro de sip en la cabecera: Allow: INVITE,ACK,OPTIONS,BYE,CANCEL,NOTIFY,REFER,
 
 9. Fijémonos en las tramas siguientes a la número 46:
  ** ¿Se registra con éxito en el primer intento?
+ No inicialmente ya que no esta registrado
  ** ¿Cómo sabemos si el registro se ha realizado correctamente o no?
+ Cuando te mandan un 200 OK
  ** ¿Podrías identificar las diferencias entre el primer intento y el segundo de registro? (fíjate en el tamaño de los paquetes y mira a qué se debe el cambio)
+ El segundo es mas grande pues lleva los datos de la autentificacion
  ** ¿Cuánto es el valor del tiempo de expiración de la sesión? Indica las unidades.
+ 3600
 
 
 10. Una vez registrados, podemos efectuar una llamada. Vamos a probar con el servicio de eco de Ekiga que nos permite comprobar si nos hemos conectado correctamente. El servicio de eco tiene la dirección sip:500@ekiga.net. Veamos el INVITE de cerca.
  ** ¿Puede verse el nombre del que efectúa la llamada, así como su dirección SIP?
+ SI: From: "Gregorio Robles" <sip:grex@ekiga.net>;
  ** ¿Qué es lo que contiene el cuerpo de la trama? ¿En qué formato/protocolo está?
+ Esta en formato SDP y contiene la descripcion de la sesion con todos sus media attributes
  ** ¿Tiene éxito el primer intento? ¿Cómo lo sabes?
+ No porque hay un 407, un request de la autenticacion al proxy
  ** ¿En qué se diferencia el segundo INVITE más abajo del primero? ¿A qué crees que se debe esto?
-
+En el tamaño, pasa lo mismo que anteriormente hay que autorizarse, esta vez con el proxy
 
 11. Una vez conectado, estudia el intercambio de tramas.
  ** ¿Qué protocolo(s) se utiliza(n)? ¿Para qué sirven estos protocolos?
+ H261 y RTP, el primero es un estandar de codec mientras que el segundo se utiliza para
+ la transmision de audio y video en tiempo real, tambien al final hay un par de paquetes de RTCP que se usan para señalizar datos de control
  ** ¿Cuál es el tamaño de paquete de los mismos?
+ 214 todos los RTP, 43 todos los RTCP y en el H261 en torno a 1050 el primero del par, y entre 200 y 500 el segundo
  ** ¿Se utilizan bits de padding?
+ No parece pues siempre esta a false
  ** ¿Cuál es la periodicidad de los paquetes que se envían?
+ *******PREGU
  ** ¿Cuántos bits/segundo estamos enviando?
-
+******PREGU
 
 
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
