@@ -56,6 +56,7 @@ porque tambien busca la IP en modo inverso(es la IP anterior)
 
 7. Hasta la trama 45 se puede observar una secuencia de tramas del protocolo STUN.
  ** ¿Por qué crees que se hace uso de este protocolo en esta captura? Busca en la Wikipedia.
+ Porque es el protocolo que permite con nat encontrar su IP publica y conocer que tipo de nat tiene.
  Para descubrir que tipo de NAT utiliza
  ** ¿Estamos tras un NAT?
 SI
@@ -103,9 +104,9 @@ En el tamaño, pasa lo mismo que anteriormente hay que autorizarse, esta vez con
  ** ¿Se utilizan bits de padding?
  No parece pues siempre esta a false
  ** ¿Cuál es la periodicidad de los paquetes que se envían?
- *******PREGU
+ 20 ms
  ** ¿Cuántos bits/segundo estamos enviando?
-******PREGU
+64 kbits/seg
 
 
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
@@ -117,7 +118,7 @@ En el tamaño, pasa lo mismo que anteriormente hay que autorizarse, esta vez con
  0
  ** ¿Cuál es el valor máximo del delta? ¿Y qué es lo que significa el valor de delta?
  1290,444 y 1290,490
- *********PREG
+ la diferencia entre cuando llego un paquete con el anterior
  ** ¿Cuáles son los valores de jitter (medio y máximo)? ¿Qué quiere decir eso? ¿Estamos ante una conversación de calidad?
 Sentido A: 183,096max y 153,240 media
 Sentido B: 119,635max y 42,5 media
@@ -131,7 +132,7 @@ Calidad alta sobretodo en sentido B
  ** Los valores de jitter son menores de 10ms hasta un paquete dado. ¿Cuál?
  247
  ** ¿A qué se debe el cambio tan brusco del jitter?
- *****PREG
+ A que al tener un cambio tan brusco en el retardo de uno de los paquetes, la varianza cambia al funcionar como media ponderada
  ** ¿Es comparable este cambio con el tiempo desde la recepción del paquete anterior? ¿Por qué?
 Si pues el jitter es la varianza entre tiempos de retardo, la diferencia de cuando llega un paquete a el siguiente lo va marcando
  ** ¿Cuál es la dependencia entre el tiempo transcurrido desde el paquete anterior y el valor de jitter?
