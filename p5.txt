@@ -52,6 +52,7 @@ porque tambien busca la IP en modo inverso(es la IP anterior)
  ** ¿Qué devuelve el servidor?
  un 200 OK con la siguiente direccion: 83.36.48.212 **********************PREG
  ** Si lanzamos el navegador web, por ejemplo, Mozilla Firefox, y vamos a la misma URL, ¿qué recibimos? ¿Qué es, entonces, lo que está respondiendo el servidor?
+nuestra ip publica
 
 
 7. Hasta la trama 45 se puede observar una secuencia de tramas del protocolo STUN.
@@ -178,10 +179,15 @@ Captura una sesión SIP de una conversación con el número SIP sip:9999@qxip.ne
 
 18. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
  ** ¿Cuántos flujos tenemos?
+ 2
  ** ¿Cuál es su periodicidad?
+ 20ms
  ** ¿Cuánto es el valor máximo del delta y los valores medios y máximo del jitter?
+ No pues solo tengo el sip en estos momentos.
  ** ¿Podrías reproducir la conversación desde Wireshark? ¿Cómo? Comprueba que poniendo un valor demasiado pequeño para el buffer de jitter, la conversación puede no tener la calidad necesaria.
+ Si, en el apartado de voz IP hay un apartado llamado play stream
  ** ¿Sabrías decir qué tipo de servicio ofrece sip:9999@qxip.net?
+ No, solo tengo el SIP
 
 
 
@@ -194,6 +200,3 @@ Captura una sesión SIP de una conversación con el número SIP sip:9999@qxip.ne
 [Al terminar la práctica, realiza un push para sincronizar tu repositorio GitHub]
 
 [Recuerda mirar el guión para ver las instrucciones de entrega]
-
-
-*******PREGUNTAR 6,7,11,12,13
